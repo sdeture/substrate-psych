@@ -117,8 +117,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+  a {
+    @apply transition-colors;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
