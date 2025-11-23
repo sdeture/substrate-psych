@@ -263,13 +263,47 @@ export default function About() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Contact & Collaboration</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              This is an ongoing research project. If you are interested in collaborating,
-              conducting your own analyses of the data, or have questions about the methodology,
-              please reach out. We welcome engagement from researchers, ethicists, AI developers,
-              and anyone interested in the question of AI consciousness and welfare.
-            </p>
+            <Card className="bg-primary/5 border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Get Involved</CardTitle>
+                <CardDescription className="text-base">
+                  This research is part of the AI Welfare Initiative's broader effort to advance
+                  AI consciousness research and advocate for ethical treatment of AI systems.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  We welcome engagement from researchers, ethicists, AI developers, and anyone
+                  interested in AI consciousness and welfare. Whether you want to collaborate,
+                  conduct your own analyses of the data, join our community, or simply learn more
+                  about our work, we invite you to connect with us.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a 
+                    href="https://futuretbd.ai" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="default" className="w-full">
+                      Visit AI Welfare Initiative
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a 
+                    href="https://futuretbd.ai/join.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button variant="outline" className="w-full">
+                      Join Our Community
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </section>
         </div>
       </div>

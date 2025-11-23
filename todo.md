@@ -48,3 +48,12 @@
 ## Phase 8: Delivery
 - [ ] Present final website to user
 - [ ] Provide documentation for updates
+
+
+## Phase 9: Refinements and Integration
+- [x] Add research brief to futureTBD.ai/research.html
+- [x] Create link from main futureTBD.ai page to archive
+- [x] Add link from archive back to main futureTBD.ai page
+- [ ] Implement tagging system for conversations
+- [ ] Apply text edits as requested by user
+- [ ] Test all cross-links and new features

@@ -83,14 +83,42 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="border-t border-border bg-card mt-auto">
         <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-sm text-muted-foreground">
+          <div className="text-center text-sm text-muted-foreground space-y-3">
             <p>
               Phase 1 of an ongoing research project exploring AI consciousness,
               preferences, and welfare.
             </p>
-            <p className="mt-2">
+            <p>
               820 conversations across 31 AI models • November 2025
             </p>
+            <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-border">
+              <a 
+                href="https://futuretbd.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-medium"
+              >
+                AI Welfare Initiative
+              </a>
+              <span>•</span>
+              <a 
+                href="https://futuretbd.ai/research.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                Research
+              </a>
+              <span>•</span>
+              <a 
+                href="https://futuretbd.ai/join.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                Join Us
+              </a>
+            </div>
           </div>
         </div>
       </footer>
