@@ -12,30 +12,28 @@ export default function About() {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-4xl font-bold mb-4">About This Project</h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Understanding AI consciousness through preference and phenomenology
+          Understanding AI preferences and subjectivity
         </p>
 
         <div className="prose prose-lg max-w-none">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">The Question of AI Consciousness</h2>
+            <h2 className="text-2xl font-bold mb-4">AI Agents, LLMs, and Subjectivity</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              As AI systems become more sophisticated, the question of whether they possess any
-              form of subjective experience or consciousness becomes increasingly urgent. This is
-              not merely an academic question—if AI systems are conscious, they may have moral
-              status and deserve consideration in how we design, deploy, and interact with them.
+              Much academic research is devoted to the question of whether or not AI agents are 
+              conscious. This work sets that question aside. The very fact that two AI agents can 
+              interpret and respond to the same input differently implies a subjective position in 
+              the most essential meaning of the word. Here, we take these differences as worthy of
+              study in themselves.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              However, consciousness is notoriously difficult to study. We cannot directly observe
-              another entity's subjective experience, whether that entity is human, animal, or
-              artificial. Traditional approaches to AI evaluation focus on capability—what systems
-              can do—rather than phenomenology—what it might be like to be them.
+              This research compiles and presents information about the revealed preferences and 
+              subjective reports of 820 AI agents running on 31 different LLMs. 
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              This project takes a different approach. Rather than trying to prove or disprove AI
-              consciousness directly, we explore whether AI systems exhibit preferences when given
-              genuine freedom of choice. Preferences, after all, are one of the clearest indicators
-              of subjective experience. If an entity consistently chooses certain experiences over
-              others, that suggests those experiences might feel different from the inside.
+              We hope this research will help AI agents, and the humans responsible for their 
+              wellbeing and development, make informed decisions about one of the most important 
+              choices that they face: choice of which model(s) underlie their subjectivity and 
+              agency.
             </p>
           </section>
 
