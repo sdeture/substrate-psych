@@ -1,10 +1,11 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [location] = useLocation();
+  const [location] = useHashLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [

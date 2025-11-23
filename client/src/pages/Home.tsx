@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { resolveDataPath } from "@/lib/utils";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +11,7 @@ export default function Home() {
   const [metadata, setMetadata] = useState<Metadata | null>(null);
 
   useEffect(() => {
-    fetch("/data/metadata.json")
+    fetch(resolveDataPath("/data/metadata.json"))
       .then((res) => res.json())
       .then((data) => setMetadata(data))
       .catch((err) => console.error("Failed to load metadata:", err));
@@ -177,7 +178,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <a href="/data/conversations.json" download>
+                <a href={resolveDataPath("/data/conversations.json")} download>
                   <Button variant="outline" className="w-full">
                     Download JSON
                   </Button>

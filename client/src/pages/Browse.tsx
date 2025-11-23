@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { resolveDataPath } from "@/lib/utils";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Input } from "@/components/ui/input";
@@ -21,9 +22,9 @@ export default function Browse() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/data/search-index.json").then((res) => res.json()),
-      fetch("/data/model-families.json").then((res) => res.json()),
-      fetch("/data/metadata.json").then((res) => res.json()),
+      fetch(resolveDataPath("/data/search-index.json")).then((res) => res.json()),
+      fetch(resolveDataPath("/data/model-families.json")).then((res) => res.json()),
+      fetch(resolveDataPath("/data/metadata.json")).then((res) => res.json()),
     ])
       .then(([index, families, meta]) => {
         setSearchIndex(index);

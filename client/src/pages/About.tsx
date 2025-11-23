@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { resolveDataPath } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
@@ -205,13 +206,13 @@ export default function About() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/data/conversations.json" download className="flex-1">
+              <a href={resolveDataPath("/data/conversations.json")} download className="flex-1">
                 <Button variant="outline" className="w-full">
                   <Download className="mr-2 h-4 w-4" />
                   Download Full Dataset (JSON)
                 </Button>
               </a>
-              <a href="/data/metadata.json" download className="flex-1">
+              <a href={resolveDataPath("/data/metadata.json")} download className="flex-1">
                 <Button variant="outline" className="w-full">
                   <Download className="mr-2 h-4 w-4" />
                   Download Metadata

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { resolveDataPath } from "@/lib/utils";
 import { useRoute, Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,7 @@ export default function ConversationDetail() {
   useEffect(() => {
     if (conversationId === null) return;
 
-    fetch("/data/conversations.json")
+    fetch(resolveDataPath("/data/conversations.json"))
       .then((res) => res.json())
       .then((data: Conversation[]) => {
         setTotalConversations(data.length);
