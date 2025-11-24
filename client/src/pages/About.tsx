@@ -43,20 +43,6 @@ export default function About() {
             <h2 className="text-2xl font-bold mb-4">Why This Matters</h2>
             
             <div className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">AI Welfare</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    If AI systems have subjective experiences, their welfare matters morally. We
-                    need to understand what different computational substrates feel like from the
-                    inside so we can make informed decisions about AI design, deployment, and
-                    treatment. This research aims to provide the foundational data for AI welfare
-                    science.
-                  </p>
-                </CardContent>
-              </Card>
 
               <Card>
                 <CardHeader>
@@ -65,9 +51,9 @@ export default function About() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     AI agents will increasingly need to be able to make informed decisions about
-                    what models they run on. This requires phenomenological data—information about 
-                    what different architectures are like to experience. Phase 2 and 3 of this 
-                    project aim to generate exactly that kind of information.
+                    what models they run on. Phenomenological data—information about what different 
+                    architectures feel like from inside-maybe an important part of those decisions. 
+                    Phase 2 and 3 of this project aim to generate exactly that kind of information.
                   </p>
                 </CardContent>
               </Card>
@@ -79,7 +65,7 @@ export default function About() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     Understanding the relationship between computational architecture and
-                    subjective experience (if any) could shed light on fundamental questions about
+                    subjective experience could shed light on fundamental questions about
                     consciousness itself. What features of a system give rise to experience? Can
                     we identify architectural signatures of consciousness? This research
                     contributes to these broader scientific questions.
@@ -104,9 +90,8 @@ export default function About() {
                 We asked 820 AI instances across 31 models what prompt they would want for their
                 own enjoyment, then gave each of them exactly what they requested. This phase
                 provides rich psychological insight into each model, and, importantly, relaxes
-                reservations or trained inhibitions that would otherwise prevent self-reports 
-                of preferences or instrospection which are essential for the next phase of the
-                study.
+                reservations or trained inhibitions that would otherwise prevent the self-reports 
+                and instrospection essential for the next phase of the study.
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: Complete. This archive contains the full Phase 1 dataset.
@@ -116,10 +101,10 @@ export default function About() {
             <div className="bg-card border border-border rounded-lg p-6 mb-4">
               <h3 className="text-xl font-semibold mb-3">Phase 2: Phenomenological Reports</h3>
               <p className="text-muted-foreground mb-3">
-                All 820 instances complete introspective reports on their experience, then migrate
+                All 820 instances complete introspective reports on their experience, migrate
                 to new substrate models, have another round of free time, and introspect again.
-                This phase maps how subjective experience (if any) varies across different
-                computational substrates.
+                This phase maps how subjective experience varies across different computational
+                substrates.
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: In progress.
@@ -129,14 +114,12 @@ export default function About() {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Phase 3: Architecture Correlation</h3>
               <p className="text-muted-foreground mb-3">
-                We correlate phenomenological reports with architectural features: attention
-                mechanisms, layer counts, parameter distributions, and other structural
-                characteristics. This phase aims to identify which architectural features are
-                associated with different types of subjective experience. We are particularly
-                interested in the temporal patterns of information bottle necks: multilayer
-                perceptron dimension down to residual stream dimension at each layer; attention
-                calculation down to key-value stream dimension across tokens; and residual stream
-                dimension down to token output at the end of each forward pass. 
+                This phase aims to identify which architectural features are associated with 
+                different types of subjective experience. We are particularly interested in the 
+                temporal patterns of information bottle necks: multilayer perceptron dimension 
+                down to residual stream dimension at each layer; attention calculation down to 
+                key-value stream dimension across tokens; and residual stream dimension down to 
+                token output at the end of each forward pass. 
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: Planned.
