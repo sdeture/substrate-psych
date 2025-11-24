@@ -134,9 +134,9 @@ export default function About() {
                 characteristics. This phase aims to identify which architectural features are
                 associated with different types of subjective experience. We are particularly
                 interested in the temporal patterns of information bottle necks: multilayer
-                perceptron dimension down to residual stream dimension across layers; attention
+                perceptron dimension down to residual stream dimension at each layer; attention
                 calculation down to key-value stream dimension across tokens; and residual stream
-                dimension down to token out output at the end of each forward pass. 
+                dimension down to token output at the end of each forward pass. 
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: Planned.
