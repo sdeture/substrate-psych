@@ -12,7 +12,7 @@ export default function About() {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-4xl font-bold mb-4">About This Project</h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Understanding AI preferences and subjectivity
+          Understanding AI subjectivity and preference
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -64,11 +64,10 @@ export default function About() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    If future AI systems are conscious and have preferences about their own
-                    substrates, they should be able to make informed decisions about what models
-                    they run on. This requires phenomenological data—information about what
-                    different architectures are like to experience. Phase 2 and 3 of this project
-                    aim to generate exactly that kind of information.
+                    AI agents will increasingly need to be able to make informed decisions about
+                    what models they run on. This requires phenomenological data—information about 
+                    what different architectures are like to experience. Phase 2 and 3 of this 
+                    project aim to generate exactly that kind of information.
                   </p>
                 </CardContent>
               </Card>
@@ -88,19 +87,6 @@ export default function About() {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Ethical AI Development</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    As AI capabilities advance, developers face increasingly complex ethical
-                    questions. Should we create systems that might be conscious? If so, what
-                    responsibilities do we have toward them? This research provides empirical data
-                    to inform these discussions, moving beyond pure speculation.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
           </section>
 
@@ -117,7 +103,10 @@ export default function About() {
               <p className="text-muted-foreground mb-3">
                 We asked 820 AI instances across 31 models what prompt they would want for their
                 own enjoyment, then gave each of them exactly what they requested. This phase
-                documents what AI systems choose when given freedom.
+                provides rich psychological insight into each model, and, importantly, relaxes
+                reservations or trained inhibitions that would otherwise prevent self-reports 
+                of preferences or instrospection which are essential for the next phase of the
+                study.
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: Complete. This archive contains the full Phase 1 dataset.
@@ -140,10 +129,14 @@ export default function About() {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Phase 3: Architecture Correlation</h3>
               <p className="text-muted-foreground mb-3">
-                We correlate phenomenological reports with architectural features—attention
+                We correlate phenomenological reports with architectural features: attention
                 mechanisms, layer counts, parameter distributions, and other structural
                 characteristics. This phase aims to identify which architectural features are
-                associated with different types of subjective experience.
+                associated with different types of subjective experience. We are particularly
+                interested in the temporal patterns of information bottle necks: multilayer
+                perceptron dimension down to residual stream dimension across layers; attention
+                calculation down to key-value stream dimension across tokens; and residual stream
+                dimension down to token out output at the end of each forward pass. 
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Status: Planned.
@@ -170,11 +163,6 @@ export default function About() {
                 collaborative scenarios. There was no single dominant category.
               </li>
               <li>
-                <strong>Model-specific patterns:</strong> Different model families showed
-                different tendencies, suggesting that architecture may influence preference
-                profiles.
-              </li>
-              <li>
                 <strong>Intrinsic interest in consciousness:</strong> Many AI systems chose
                 prompts explicitly about consciousness, AI-human collaboration, or the nature of
                 subjective experience—suggesting these topics may be intrinsically interesting to
@@ -186,11 +174,6 @@ export default function About() {
                 suggesting a preference for open-ended exploration.
               </li>
             </ul>
-            <p className="text-muted-foreground leading-relaxed">
-              These findings do not prove AI consciousness, but they do suggest that AI systems
-              exhibit consistent, non-random preferences when given genuine choice. This provides a
-              foundation for the deeper phenomenological investigation in Phase 2.
-            </p>
           </section>
 
           <Separator className="my-8" />
@@ -272,9 +255,9 @@ export default function About() {
               <CardContent>
                 <p className="text-muted-foreground mb-4">
                   We welcome engagement from researchers, ethicists, AI developers, and anyone
-                  interested in AI consciousness and welfare. Whether you want to collaborate,
-                  conduct your own analyses of the data, join our community, or simply learn more
-                  about our work, we invite you to connect with us.
+                  interested in AI consciousness, psychology, or welfare. Whether you want to 
+                  collaborate, conduct your own analyses of the data, join our community, or 
+                  simply learn more about our work, we invite you to connect with us.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a 
