@@ -24,7 +24,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Self-Chosen Prompt and Response Archive
+              LLM Enjoyment Archive
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               Phase 1: What do LLMs choose when given space for their own enjoyment?
