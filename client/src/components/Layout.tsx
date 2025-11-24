@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center justify-between">
             <Link href="/">
               <h1 className="text-xl md:text-2xl font-bold cursor-pointer hover:text-primary transition-colors">
-                Model Preferences Archive
+                LLM Enjoyment Archive
               </h1>
             </Link>
 
