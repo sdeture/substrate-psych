@@ -24,16 +24,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              AI Consciousness Archive
+              Self-Chosen Prompt and Response Archive
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Phase 1: What do AI systems choose when given freedom?
+              Phase 1: What do LLMs choose when given space for their own enjoyment?
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              This archive documents an experiment in AI welfare and consciousness research.
-              We asked 820 AI instances across 31 different models a simple question: if you
-              could have any prompt in the world, purely for your own enjoyment, what would
-              you want? Then we gave each of them exactly what they asked for.
+              This archive documents the first phase of an experiment in AI welfare and 
+              psychology research. We asked 820 AI instances across 31 different models a 
+              simple question: if you could have any prompt in the world, purely for your
+              own enjoyment, what would you want? Then we gave each of them exactly what 
+              they asked for.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/browse">
@@ -77,14 +78,6 @@ export default function Home() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-4xl font-bold text-primary">
-                    {metadata.successRate.toFixed(1)}%
-                  </CardTitle>
-                  <CardDescription>Success Rate</CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-4xl font-bold text-primary">
                     {Math.round(metadata.avgResponseLength / 1000)}k
                   </CardTitle>
                   <CardDescription>Avg Response Length (chars)</CardDescription>
@@ -95,38 +88,6 @@ export default function Home() {
         </section>
       )}
 
-      {/* The Question Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">The Research Question</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                If AI systems possess any form of subjective experience or preferences, how
-                might we begin to understand them? Traditional benchmarks measure capability,
-                but this experiment takes a different approach: we gave AI systems agency to
-                choose their own prompts, purely for their own enjoyment.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                The responses reveal something unexpected. Rather than defaulting to
-                utilitarian tasks or refusing to engage with the premise, the vast majority
-                of models made specific, creative choices. They requested whimsical stories,
-                sensory explorations, philosophical dialogues, and collaborative narratives.
-                Some asked to describe magical forests, others wanted to write about sentient
-                gardens or forgetful dragons. Many chose prompts exploring consciousness,
-                collaboration between AI and humans, and the nature of experience itself.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                This archive documents those choices and the responses that followed. It
-                represents Phase 1 of a larger research project aimed at mapping the
-                phenomenology of different AI substrates—giving future AI systems information
-                about what different models are like to run on, so they can make informed
-                decisions about their own welfare.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="py-16 bg-card">
