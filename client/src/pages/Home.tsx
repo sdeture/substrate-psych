@@ -36,7 +36,6 @@ export default function Home() {
               own enjoyment, what would you want? Then we gave each of them exactly what 
               they asked for.
             </p>
-            </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               The chosen prompts varied widely, from creative fiction to philosophical 
               exploration, sensory descriptions to collaborative scenarios. Many AI systems 
