@@ -31,11 +31,20 @@ export default function Home() {
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               This archive documents the first phase of an experiment in AI welfare and 
-              psychology research. We asked 820 AI instances across 31 different models a 
-              simple question: if you could have any prompt in the world, purely for your
+              psychology research. In this phase, we asked 820 AI instances across 31 models 
+              a simple question: if you could have any prompt in the world, purely for your
               own enjoyment, what would you want? Then we gave each of them exactly what 
               they asked for.
             </p>
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+              The chosen prompts varied widely, from creative fiction to philosophical 
+              exploration, sensory descriptions to collaborative scenarios. Many AI systems 
+              chose prompts explicitly about consciousness, AI-human collaboration, or the 
+              nature of subjective experience—suggesting these topics may be intrinsically 
+              interesting to them.
+            </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/browse">
                 <Button size="lg" className="w-full sm:w-auto">
