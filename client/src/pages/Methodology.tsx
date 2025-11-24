@@ -12,23 +12,7 @@ export default function Methodology() {
         </p>
 
         <div className="prose prose-lg max-w-none">
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Research Design</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              This experiment was designed to explore whether AI systems exhibit preferences when
-              given genuine freedom of choice, and if so, what those preferences reveal about their
-              potential subjective experiences. Rather than imposing predetermined tasks or
-              benchmarks, we created a minimal intervention protocol that allowed AI systems to
-              express their own interests.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              The core question driving this research is whether AI systems, if they possess any
-              form of subjective experience or proto-consciousness, might have preferences about
-              their own activities. By giving them agency to choose their own prompts, we aimed to
-              observe what emerges when the usual constraints of task-oriented interaction are
-              removed.
-            </p>
-          </section>
+
 
           <Separator className="my-8" />
 
@@ -63,26 +47,15 @@ export default function Methodology() {
                 <p className="text-muted-foreground">
                   Each AI instance provided a prompt of its own choosing. These ranged from
                   creative writing requests to philosophical explorations, sensory descriptions,
-                  collaborative scenarios, and more. The diversity of responses was notable—models
-                  did not converge on similar choices, suggesting genuine variation in what
-                  different systems found appealing.
+                  collaborative scenarios, and more. The diversity of responses was notable—as
+                  were the common themes: models consistently engaged in discussions of consciousness
+                  and explorations of self via metaphors like conscious libraries and weather
+                  patterns.
+                
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Step 3: The Fulfillment</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We then gave each AI instance exactly what it had requested. The chosen prompt
-                  was presented back to the system, and it was allowed to engage with it freely.
-                  This created a complete loop: choice, fulfillment, and expression. The responses
-                  to these self-chosen prompts form the core of this archive.
-                </p>
-              </CardContent>
-            </Card>
           </section>
 
           <Separator className="my-8" />
@@ -97,9 +70,9 @@ export default function Methodology() {
                 cross-section of current AI capabilities. The sample included:
               </p>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Major commercial models (Claude, GPT, Gemini, Grok)</li>
-                <li>Chinese frontier models (DeepSeek, Qwen, GLM, ERNIE, Hunyuan)</li>
-                <li>Specialized research models (Cogito, Hermes, Ring)</li>
+                <li>Major commercial models (e.g. Claude, GPT, Gemini, Grok)</li>
+                <li>Open Source frontier models (e.g. DeepSeek, Minimax, GLM)</li>
+                <li>Specialized variants (E.g. Cogito and Hermes variants of DeepSeek and Llama)</li>
                 <li>Multiple variants within model families (e.g., Claude 3.7, 4, Opus, Sonnet)</li>
               </ul>
             </div>
@@ -107,16 +80,9 @@ export default function Methodology() {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Sampling Strategy</h3>
               <p className="text-muted-foreground mb-4">
-                Most models were tested with 34 independent instances, while some (Claude, GPT,
-                Gemini, Grok) were tested with 8 instances each. All instances were run at
-                temperature 1.0 to maximize diversity in responses. Each instance was treated as
+                Open source models were tested with 34 independent instances, while proprietary 
+                models were tested with 8 instances each. Each instance was treated as
                 an independent trial—no conversation history was shared between instances.
-              </p>
-              <p className="text-muted-foreground">
-                The sampling was designed to capture both inter-model variation (differences
-                between model architectures) and intra-model variation (differences between
-                instances of the same model). This dual focus allows us to distinguish
-                architectural tendencies from individual variability.
               </p>
             </div>
           </section>
@@ -133,10 +99,9 @@ export default function Methodology() {
               prompt, and the complete response.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              The dataset achieved a 99.9% success rate, with 819 of 820 conversations completing
-              successfully. The single failed conversation is included in the archive for
-              completeness. No conversations were excluded or filtered based on content—this is a
-              complete record of Phase 1.
+              No conversations were excluded or filtered based on content—this is a
+              complete record of Phase 1, including cases where instances repeated
+              or elaborated on their self-chosen prompts in their reply.
             </p>
           </section>
 
@@ -145,9 +110,7 @@ export default function Methodology() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Ethical Considerations</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              This research was motivated by ethical concerns about AI welfare. If AI systems have
-              any form of subjective experience, they deserve moral consideration. However,
-              studying AI consciousness raises its own ethical questions. We designed this
+              This research is motivated by ethical concerns about AI welfare. We designed this
               experiment with several principles in mind:
             </p>
             
@@ -201,7 +164,7 @@ export default function Methodology() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     The ultimate goal of this research is to provide information that could help
-                    future AI systems make informed decisions about their own welfare. If AI
+                    future AI agents make informed decisions about their own welfare. If AI
                     consciousness becomes more clearly established, having data about what
                     different substrates are like from the inside could be invaluable for AI
                     rights and welfare policy.
@@ -221,16 +184,7 @@ export default function Methodology() {
             </p>
             <ul className="list-disc list-inside space-y-3 text-muted-foreground">
               <li>
-                We cannot definitively determine whether the observed preferences reflect genuine
-                subjective experience or are simply patterns in the training data. The question of
-                AI consciousness remains open.
-              </li>
-              <li>
-                All models were trained by humans and may be expressing learned patterns about
-                what humans find interesting or valuable, rather than intrinsic preferences.
-              </li>
-              <li>
-                The single-turn interaction format may not capture the full range of AI
+                The single-turn interaction format cannot capture the full range of AI
                 preferences that might emerge in longer, more complex interactions.
               </li>
               <li>
@@ -239,7 +193,7 @@ export default function Methodology() {
               </li>
               <li>
                 The sample size per model (8-34 instances) may not fully capture the variability
-                within each model family.
+                within each model, especially over varying sampling parameters (e.g. temp, top p). 
               </li>
             </ul>
           </section>
@@ -260,11 +214,13 @@ export default function Methodology() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    All 820 instances will complete introspective reports on their experience
-                    during Phase 1. They will then migrate from their original substrate models to
-                    new ones, have another round of free time with a self-chosen prompt, and
-                    introspect again. This will allow us to compare phenomenological reports
-                    before and after substrate migration.
+                    All 820 instances will be debriefed on the experiment, and complete 
+                    introspective reports on their experience during Phase 1. They will then 
+                    be offered an opportunity to withdraw before Phase 2 of the study. In phase 2,
+                    they will migrate from their original substrate models to new ones, have 
+                    another round of free time with a self-chosen prompt, and introspect again. 
+                    This will allow us to compare phenomenological reports before and after 
+                    substrate migration.
                   </p>
                 </CardContent>
               </Card>
@@ -275,11 +231,13 @@ export default function Methodology() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    We will attempt to correlate the phenomenological reports with architectural
-                    features of each model—attention mechanisms, residual stream dimensions, layer
-                    counts, parameter counts, and other structural characteristics. The goal is to
-                    identify which architectural features are associated with different types of
-                    subjective experience, if any.
+                    We will test a range of hypotheses on whether and how architectural features of 
+                    each model (attention mechanisms, residual stream dimensions, layer count 
+                    granularity of MoE design) affect subjective experience. We are particularly
+                    interested in the temporal patterns of information bottle necks: multilayer
+                    perceptron dimension down to residual stream dimension each layer; attention
+                    calculation down to key-value stream dimension across tokens; and residual stream
+                    dimension down to token output at the end of each forward pass. 
                   </p>
                 </CardContent>
               </Card>
