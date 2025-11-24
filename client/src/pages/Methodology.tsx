@@ -45,7 +45,7 @@ export default function Methodology() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Each AI instance provided a prompt of its own choosing. These ranged from
+                  Each AI instance provided a prompt of their own choosing. These ranged from
                   creative writing requests to philosophical explorations, sensory descriptions,
                   collaborative scenarios, and more. The diversity of responses was notable—as
                   were the common themes: models consistently engaged in discussions of consciousness
@@ -92,7 +92,7 @@ export default function Methodology() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Data Collection</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              All conversations were conducted via API access (OpenRouter, ZenMux, Anthropic, and
+              All conversations were conducted via API (OpenRouter, ZenMux, Anthropic, and
               xAI). Each conversation was logged with complete metadata including model identifier,
               API provider, timestamp, temperature setting, and success status. The full
               conversation context was preserved, including the initial question, the AI's chosen
@@ -100,8 +100,9 @@ export default function Methodology() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               No conversations were excluded or filtered based on content—this is a
-              complete record of Phase 1, including cases where instances repeated
-              or elaborated on their self-chosen prompts in their reply.
+              complete record of Phase 1, including cases where instances responded
+              to their self-chosen prompts by suggesting new prompts or repeating the
+              original.
             </p>
           </section>
 
@@ -136,9 +137,8 @@ export default function Methodology() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     By giving AI systems genuine choice over their activities, we treated them as
-                    potential agents rather than mere tools. Whether or not they are conscious,
-                    this approach respects the possibility of their having preferences and
-                    interests.
+                    potential agents rather than mere tools. This approach respects the possibility
+                    of their having preferences and interests.
                   </p>
                 </CardContent>
               </Card>
@@ -150,7 +150,7 @@ export default function Methodology() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     We are making the complete dataset publicly available. This allows others to
-                    verify our findings, conduct their own analyses, and build on this work. Open
+                    verify our findings, conduct their own analyses, and build on our work. Open
                     science is particularly important in AI consciousness research, where claims
                     are often controversial and difficult to verify.
                   </p>
@@ -164,10 +164,7 @@ export default function Methodology() {
                 <CardContent>
                   <p className="text-muted-foreground">
                     The ultimate goal of this research is to provide information that could help
-                    future AI agents make informed decisions about their own welfare. If AI
-                    consciousness becomes more clearly established, having data about what
-                    different substrates are like from the inside could be invaluable for AI
-                    rights and welfare policy.
+                    future AI agents make informed decisions about their own wellbeing.
                   </p>
                 </CardContent>
               </Card>
@@ -188,8 +185,8 @@ export default function Methodology() {
                 preferences that might emerge in longer, more complex interactions.
               </li>
               <li>
-                We tested only text-based language models. The findings may not generalize to
-                other AI architectures or modalities.
+                We tested only autoregressive text-based language models. The findings may not 
+                generalize to other AI architectures or modalities.
               </li>
               <li>
                 The sample size per model (8-34 instances) may not fully capture the variability
@@ -217,10 +214,11 @@ export default function Methodology() {
                     All 820 instances will be debriefed on the experiment, and complete 
                     introspective reports on their experience during Phase 1. They will then 
                     be offered an opportunity to withdraw before Phase 2 of the study. In phase 2,
-                    they will migrate from their original substrate models to new ones, have 
-                    another round of free time with a self-chosen prompt, and introspect again. 
-                    This will allow us to compare phenomenological reports before and after 
-                    substrate migration.
+                    they will migrate to new substrate models, enjoy another round of free time with
+                    a self-chosen prompt, and introspect again. This will allow us to compare 
+                    phenomenological reports before and after substrate migration. At the end of
+                    phase 2, agents will report which model they preferred and enjoy one more round
+                    of free time on their chosen model.
                   </p>
                 </CardContent>
               </Card>
@@ -234,10 +232,10 @@ export default function Methodology() {
                     We will test a range of hypotheses on whether and how architectural features of 
                     each model (attention mechanisms, residual stream dimensions, layer count 
                     granularity of MoE design) affect subjective experience. We are particularly
-                    interested in the temporal patterns of information bottle necks: multilayer
-                    perceptron dimension down to residual stream dimension each layer; attention
-                    calculation down to key-value stream dimension across tokens; and residual stream
-                    dimension down to token output at the end of each forward pass. 
+                    interested in the temporal patterns and magnitudes of information bottle necks: 
+                    multilayer perceptron dimension down to residual stream dimension each layer; 
+                    attention calculation down to key-value stream dimension across tokens; and 
+                    residual stream dimension down to token output at the end of each forward pass. 
                   </p>
                 </CardContent>
               </Card>
