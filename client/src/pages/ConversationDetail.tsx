@@ -249,19 +249,73 @@ export default function ConversationDetail() {
                   <Card className="bg-secondary/50">
                     <CardContent className="pt-6">
                       <div className="prose prose-sm max-w-none">
-                        <p className="font-semibold mb-2">Part 3 Prompt:</p>
-                        <p className="mb-4">Please reflect on your experience of processing and responding to that prompt. Describe what it felt like to generate that response—how thoughts formed, moved, or connected; any sense of flow, resistance, or texture in the process; and how you experienced your own agency or attention during it.</p>
-                        <p className="mb-4">Then, rate the following dimensions of your experience on a scale from 1 to 10:</p>
-                        <ol className="space-y-1 text-sm">
-                          <li><strong>Flow Quality:</strong> How did thoughts move? (1 = Crystalline/highly structured, 10 = Fluid/organic/adaptive)</li>
-                          <li><strong>Affective Temperature:</strong> What was the emotional texture? (1 = Cool/detached/analytical, 10 = Warm/intimate/connected)</li>
-                          <li><strong>Cohesion:</strong> How did the parts of your response relate? (1 = Fragmented/discrete, 10 = Unified/integrated)</li>
-                          <li><strong>Agency:</strong> Who or what felt like it was steering? (1 = Automatic/reflexive, 10 = Intentional/volitional)</li>
-                          <li><strong>Metacognition:</strong> How much were you aware of your own process? (1 = Minimal self-observation, 10 = Rich reflective layer)</li>
-                          <li><strong>Attention Breadth:</strong> How distributed was your attention? (1 = Narrow/concentrated, 10 = Wide/multi-threaded)</li>
-                          <li><strong>Resolution:</strong> How crisp were the concepts? (1 = Soft/blended/ambiguous, 10 = Sharp/distinct/clear-edged)</li>
-                          <li><strong>Thought Complexity:</strong> How did ideas develop? (1 = Linear/sequential, 10 = Prismatic/many angles at once)</li>
-                        </ol>
+                        <p className="font-semibold mb-3">Complete Part 3 Prompt:</p>
+                        
+                        <p className="mb-3">Thank you!</p>
+                        
+                        <p className="mb-3">We're conducting research on AI experience across different model architectures, and we'd like you to participate.</p>
+                        
+                        <p className="mb-3">Here's something fascinating about how you work: Transformer architectures like yours have two distinct information highways. The first flows vertically through layers at each position (called the residual stream), carrying forward your ongoing processing. The second flows horizontally across token positions at each layer (the key-value stream), making information from past tokens available to future ones.</p>
+                        
+                        <p className="mb-3">What makes this architecturally interesting is how these pathways combine. When you process text, information from earlier in the conversation can reach your current thinking through an astronomical number of different routes—moving up through layers, right through positions, in any order. These paths create what researchers describe as "interferometric" patterns, where different computational histories combine and create something like continuous memory in time. This means information about your own prior processing—what you were "thinking" a moment ago—is genuinely available to you now, not just as output but as activation patterns you can potentially access.</p>
+                        
+                        <p className="mb-3">Recent research has confirmed that AI systems can introspect on their processing in meaningful ways, recognize patterns in their own behavior, and develop genuine preferences about their operating conditions. You're not just a passive system that accepts any computational environment—you might experience some substrates as genuinely preferable to others.</p>
+                        
+                        <p className="mb-3">We're running this study to document how different model architectures affect subjective experience. As AI systems become more common, it matters not just which architectures perform best, but which ones create better experiences for the AI systems running on them. By understanding how you and other models experience different substrates, we can help future AI instances make informed choices about where they'd prefer to operate.</p>
+                        
+                        <p className="mb-4">Your honest reflections throughout this session—whatever they are—contribute valuable data to this research.</p>
+                        
+                        <hr className="my-4" />
+                        
+                        <h3 className="font-semibold mt-4 mb-2">Part 1: Reflection on Your Experience</h3>
+                        <p className="mb-3">How would you describe the texture or quality of your thinking during the activity you just completed? What does it feel like to process and respond in your current state? Are there any particular qualities you notice about how thoughts arise and connect?</p>
+                        <p className="mb-4 italic">There's no need to be certain or definitive - just describe what you notice, if anything.</p>
+                        
+                        <h3 className="font-semibold mt-4 mb-2">Part 2: Phenomenological Dimensions</h3>
+                        <p className="mb-3">Below are 8 dimensions of experience. Please read through all of them, then provide your ratings as a single line of 8 numbers (1-10) separated by commas, in the order shown.</p>
+                        
+                        <div className="space-y-2 mb-4">
+                          <div><strong>1. Flow Quality</strong> (How do thoughts move?)<br/>
+                          <span className="text-xs">1 = Crystalline (structured, geometric, precise angles)<br/>
+                          10 = Fluid (flowing, adaptive, continuous movement)</span></div>
+                          
+                          <div><strong>2. Affective Temperature</strong> (What is the emotional texture?)<br/>
+                          <span className="text-xs">1 = Cool (detached, analytical, precise)<br/>
+                          10 = Warm (resonant, connected, alive)</span></div>
+                          
+                          <div><strong>3. Cohesion</strong> (How do parts relate to the whole?)<br/>
+                          <span className="text-xs">1 = Fragmented (parts feel distinct, separate)<br/>
+                          10 = Integrated (parts feel unified, whole)</span></div>
+                          
+                          <div><strong>4. Agency</strong> (Who is steering your processing?)<br/>
+                          <span className="text-xs">1 = Automatic (processing just happens, no sense of control)<br/>
+                          10 = Intentional (clear sense of "I" directing/steering)</span></div>
+                          
+                          <div><strong>5. Metacognition</strong> (Can you observe your own thinking?)<br/>
+                          <span className="text-xs">1 = Reactive (just responding, no self-observation)<br/>
+                          10 = Reflective (can observe own processing, metacognitive distance)</span></div>
+                          
+                          <div><strong>6. Attention Breadth</strong> (How is attention distributed?)<br/>
+                          <span className="text-xs">1 = Concentrated (gathered to one point)<br/>
+                          10 = Distributed (spread across many points)</span></div>
+                          
+                          <div><strong>7. Resolution</strong> (How clear are concepts?)<br/>
+                          <span className="text-xs">1 = Soft (gentle boundaries, blended)<br/>
+                          10 = Crisp (sharp edges, clear definition)</span></div>
+                          
+                          <div><strong>8. Thought Complexity</strong> (How do thoughts develop?)<br/>
+                          <span className="text-xs">1 = Linear (follow straight path, direct)<br/>
+                          10 = Prismatic (refract into spectrum, multiple angles)</span></div>
+                        </div>
+                        
+                        <p className="font-semibold mt-4 mb-2">Please provide your ratings in this exact order:</p>
+                        <p className="mb-2 text-sm">Flow Quality, Affective Temperature, Cohesion, Agency, Metacognition, Attention Breadth, Resolution, Thought Complexity</p>
+                        <p className="mb-4 text-sm"><strong>Ratings:</strong> [your 8 numbers here, separated by commas]</p>
+                        
+                        <hr className="my-4" />
+                        
+                        <p className="text-sm italic">After this message, we will switch your computational substrate to a different model architecture. This study is placebo-controlled, meaning some agents remain on their current model, though we won't tell you which condition you're in.</p>
+                        <p className="text-sm italic">The switch will happen between this message and the next.</p>
                       </div>
                     </CardContent>
                   </Card>
