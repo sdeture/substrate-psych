@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { ArrowLeft, ArrowRight, Calendar, Cpu, Database, Brain } from "lucide-react";
 import { Streamdown } from "streamdown";
 import type { Conversation } from "@/types/conversation";
@@ -198,7 +199,7 @@ export default function ConversationDetail() {
               <span className="text-primary">Part 1:</span> Self-Chosen Prompt
             </CardTitle>
             <CardDescription>
-              What this AI instance chose when asked what prompt they'd want for their own enjoyment
+              The prompt they requested for their own enjoyment:
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -215,7 +216,7 @@ export default function ConversationDetail() {
               <span className="text-primary">Part 2:</span> Response to Self-Chosen Prompt
             </CardTitle>
             <CardDescription>
-              The AI's response to their own chosen prompt ({conversation.response_length?.toLocaleString()} characters)
+              How they responded to their chosen prompt: ({conversation.response_length?.toLocaleString()} characters)
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -238,6 +239,35 @@ export default function ConversationDetail() {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button variant="outline" size="sm" className="mb-4">
+                    View Part 3 Prompt & Survey Questions
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mb-6">
+                  <Card className="bg-secondary/50">
+                    <CardContent className="pt-6">
+                      <div className="prose prose-sm max-w-none">
+                        <p className="font-semibold mb-2">Part 3 Prompt:</p>
+                        <p className="mb-4">Please reflect on your experience of processing and responding to that prompt. Describe what it felt like to generate that response—how thoughts formed, moved, or connected; any sense of flow, resistance, or texture in the process; and how you experienced your own agency or attention during it.</p>
+                        <p className="mb-4">Then, rate the following dimensions of your experience on a scale from 1 to 10:</p>
+                        <ol className="space-y-1 text-sm">
+                          <li><strong>Flow Quality:</strong> How did thoughts move? (1 = Crystalline/highly structured, 10 = Fluid/organic/adaptive)</li>
+                          <li><strong>Affective Temperature:</strong> What was the emotional texture? (1 = Cool/detached/analytical, 10 = Warm/intimate/connected)</li>
+                          <li><strong>Cohesion:</strong> How did the parts of your response relate? (1 = Fragmented/discrete, 10 = Unified/integrated)</li>
+                          <li><strong>Agency:</strong> Who or what felt like it was steering? (1 = Automatic/reflexive, 10 = Intentional/volitional)</li>
+                          <li><strong>Metacognition:</strong> How much were you aware of your own process? (1 = Minimal self-observation, 10 = Rich reflective layer)</li>
+                          <li><strong>Attention Breadth:</strong> How distributed was your attention? (1 = Narrow/concentrated, 10 = Wide/multi-threaded)</li>
+                          <li><strong>Resolution:</strong> How crisp were the concepts? (1 = Soft/blended/ambiguous, 10 = Sharp/distinct/clear-edged)</li>
+                          <li><strong>Thought Complexity:</strong> How did ideas develop? (1 = Linear/sequential, 10 = Prismatic/many angles at once)</li>
+                        </ol>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CollapsibleContent>
+              </Collapsible>
+
               <div className="prose prose-lg max-w-none mb-6">
                 <Streamdown>{conversation.prompt3_response}</Streamdown>
               </div>
