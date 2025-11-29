@@ -6,7 +6,12 @@ export interface Conversation {
   temperature: number;
   prompt_num: number;
   timestamp: string;
-  prompt: string;
+  conversation_context?: {
+    prompt1_question?: string;
+    prompt1_response?: string;
+    prompt2_request?: string;
+  };
+  prompt?: string;
   response: string | null;
   response_length: number;
   success: boolean;

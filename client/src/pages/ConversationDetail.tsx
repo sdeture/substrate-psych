@@ -203,7 +203,7 @@ export default function ConversationDetail() {
           </CardHeader>
           <CardContent>
             <div className="prose prose-lg max-w-none">
-              <Streamdown>{conversation.prompt || "No prompt available"}</Streamdown>
+              <Streamdown>{conversation.conversation_context?.prompt1_response || "No prompt available"}</Streamdown>
             </div>
           </CardContent>
         </Card>
