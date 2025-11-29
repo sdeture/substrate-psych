@@ -42,15 +42,16 @@ export default function Browse() {
       const query = searchQuery.toLowerCase();
       results = results.filter(
         (item) =>
-          item.chosenPrompt.toLowerCase().includes(query) ||
-          item.responsePreview.toLowerCase().includes(query) ||
+          item.prompt.toLowerCase().includes(query) ||
+          item.response.toLowerCase().includes(query) ||
+          (item.introspection && item.introspection.toLowerCase().includes(query)) ||
           item.model.toLowerCase().includes(query)
       );
     }
 
     // Filter by model family
     if (selectedFamily !== "all" && modelFamilies[selectedFamily]) {
-      const familyModels = modelFamilies[selectedFamily];
+      const familyModels = modelFamilies[selectedFamily].models;
       results = results.filter((item) => familyModels.includes(item.model));
     }
 
@@ -67,7 +68,7 @@ export default function Browse() {
           comparison = new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
           break;
         case "length":
-          comparison = a.responseLength - b.responseLength;
+          comparison = (a.response?.length || 0) - (b.response?.length || 0);
           break;
         case "model":
           comparison = a.model.localeCompare(b.model);
@@ -199,24 +200,31 @@ export default function Browse() {
               <Card className="h-full cursor-pointer hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <Badge variant="secondary" className="text-xs">
-                      {item.model.split("/").pop()}
-                    </Badge>
+                    <div className="flex gap-1 flex-wrap">
+                      <Badge variant="secondary" className="text-xs">
+                        {item.model.split("/").pop()}
+                      </Badge>
+                      {item.has_ratings && (
+                        <Badge variant="outline" className="text-xs">
+                          Phenomenology
+                        </Badge>
+                      )}
+                    </div>
                     <span className="text-xs text-muted-foreground">
                       {new Date(item.timestamp).toLocaleDateString()}
                     </span>
                   </div>
                   <CardTitle className="text-lg line-clamp-2">
-                    {item.chosenPrompt}
+                    {item.prompt}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="line-clamp-3">
-                    {item.responsePreview}
+                    {item.response}
                   </CardDescription>
                   <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
                     <span>{item.api}</span>
-                    <span>{Math.round(item.responseLength / 1000)}k chars</span>
+                    <span>{Math.round((item.response?.length || 0) / 1000)}k chars</span>
                   </div>
                 </CardContent>
               </Card>

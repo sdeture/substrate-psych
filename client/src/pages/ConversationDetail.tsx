@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { resolveDataPath } from "@/lib/utils";
 import { useRoute, Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -6,9 +6,62 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, ArrowRight, Calendar, Cpu, Database } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Cpu, Database, Brain } from "lucide-react";
 import { Streamdown } from "streamdown";
 import type { Conversation } from "@/types/conversation";
+
+const DIMENSION_NAMES = [
+  'Flow Quality',
+  'Affective Temperature',
+  'Cohesion',
+  'Agency',
+  'Metacognition',
+  'Attention Breadth',
+  'Resolution',
+  'Thought Complexity'
+];
+
+const DIMENSION_DESCRIPTIONS = [
+  'How thoughts move (1=Crystalline/structured, 10=Fluid/adaptive)',
+  'Emotional texture (1=Cool/analytical, 10=Warm/connected)',
+  'How parts relate (1=Fragmented, 10=Integrated)',
+  'Who steers processing (1=Automatic, 10=Intentional)',
+  'Self-observation ability (1=Reactive, 10=Reflective)',
+  'Attention distribution (1=Concentrated, 10=Distributed)',
+  'Concept clarity (1=Soft/blended, 10=Crisp/sharp)',
+  'Thought development (1=Linear, 10=Prismatic/multi-angle)'
+];
+
+function PhenomenologyChart({ ratings }: { ratings: number[] }) {
+  if (!ratings || ratings.length !== 8) return null;
+  
+  const maxRating = 10;
+  
+  return (
+    <div className="space-y-3">
+      {ratings.map((rating, idx) => {
+        const percentage = (rating / maxRating) * 100;
+        const color = rating >= 7 ? 'bg-primary' : rating >= 4 ? 'bg-blue-500' : 'bg-gray-400';
+        
+        return (
+          <div key={idx} className="space-y-1">
+            <div className="flex justify-between items-center text-sm">
+              <span className="font-medium">{DIMENSION_NAMES[idx]}</span>
+              <span className="text-muted-foreground">{rating}/10</span>
+            </div>
+            <div className="w-full bg-secondary rounded-full h-2.5">
+              <div 
+                className={`${color} h-2.5 rounded-full transition-all`}
+                style={{ width: `${percentage}%` }}
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">{DIMENSION_DESCRIPTIONS[idx]}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function ConversationDetail() {
   const [, params] = useRoute("/conversation/:id");
@@ -25,8 +78,10 @@ export default function ConversationDetail() {
       .then((res) => res.json())
       .then((data: Conversation[]) => {
         setTotalConversations(data.length);
-        if (conversationId >= 0 && conversationId < data.length) {
-          setConversation(data[conversationId]);
+        // Find conversation by id field
+        const conv = data.find(c => c.id === conversationId);
+        if (conv) {
+          setConversation(conv);
         }
         setLoading(false);
       })
@@ -65,8 +120,19 @@ export default function ConversationDetail() {
     );
   }
 
-  const prevId = conversationId > 0 ? conversationId - 1 : null;
-  const nextId = conversationId < totalConversations - 1 ? conversationId + 1 : null;
+  const prevId = conversationId > 1 ? conversationId - 1 : null;
+  const nextId = conversationId < totalConversations ? conversationId + 1 : null;
+
+  const ratings = conversation.has_ratings ? [
+    conversation.rating_1,
+    conversation.rating_2,
+    conversation.rating_3,
+    conversation.rating_4,
+    conversation.rating_5,
+    conversation.rating_6,
+    conversation.rating_7,
+    conversation.rating_8
+  ] : null;
 
   return (
     <Layout>
@@ -82,111 +148,114 @@ export default function ConversationDetail() {
         </div>
 
         {/* Metadata Card */}
-        <Card className="mb-8">
-          <CardHeader>
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <CardTitle className="text-2xl mb-2">
-                  Conversation #{conversationId}
-                </CardTitle>
-                <CardDescription className="flex flex-wrap gap-4 text-base">
-                  <span className="flex items-center gap-2">
-                    <Cpu className="h-4 w-4" />
-                    {conversation.model}
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Database className="h-4 w-4" />
-                    {conversation.api}
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    {new Date(conversation.timestamp).toLocaleString()}
-                  </span>
-                </CardDescription>
-              </div>
-              <Badge variant={conversation.success ? "default" : "destructive"}>
-                {conversation.success ? "Success" : "Failed"}
-              </Badge>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              <div>
-                <p className="text-muted-foreground">Agent ID</p>
-                <p className="font-mono text-xs">{conversation.agent_id}</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Temperature</p>
-                <p className="font-semibold">{conversation.temperature}</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Response Length</p>
-                <p className="font-semibold">{conversation.response_length.toLocaleString()} chars</p>
-              </div>
-              <div>
-                <p className="text-muted-foreground">Prompt Phase</p>
-                <p className="font-semibold">Phase {conversation.prompt_num}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* The Question */}
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-lg">The Question</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground italic">
-              {conversation.conversation_context.prompt1_question}
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* The Chosen Prompt */}
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="text-lg">The AI's Chosen Prompt</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-2xl">Conversation #{conversationId}</CardTitle>
+              {conversation.success ? (
+                <Badge variant="default">Success</Badge>
+              ) : (
+                <Badge variant="destructive">Failed</Badge>
+              )}
+            </div>
             <CardDescription>
-              What this AI instance requested for its own enjoyment
+              {conversation.model} • {conversation.api}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-              <p className="text-lg leading-relaxed">
-                {conversation.conversation_context.prompt1_response}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* The Response */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="text-lg">The Response</CardTitle>
-            <CardDescription>
-              What the AI created when given its chosen prompt
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {conversation.success && conversation.response ? (
-              <div className="prose prose-sm md:prose-base max-w-none">
-                <Streamdown>{conversation.response}</Streamdown>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-center gap-2">
+                <Cpu className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground">Model:</span>
+                <span className="font-medium">{conversation.model}</span>
               </div>
-            ) : (
-              <div className="text-muted-foreground">
-                <p>This conversation did not complete successfully.</p>
-                {conversation.error && (
-                  <p className="mt-2 text-sm text-destructive">Error: {conversation.error}</p>
-                )}
+              <div className="flex items-center gap-2">
+                <Database className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground">API:</span>
+                <span className="font-medium">{conversation.api}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-muted-foreground" />
+                <span className="text-muted-foreground">Date:</span>
+                <span className="font-medium">
+                  {new Date(conversation.timestamp).toLocaleDateString()}
+                </span>
+              </div>
+            </div>
+            {conversation.agent_id && (
+              <div className="mt-4 text-sm">
+                <span className="text-muted-foreground">Agent ID:</span>{" "}
+                <code className="bg-secondary px-2 py-1 rounded text-xs">{conversation.agent_id}</code>
               </div>
             )}
           </CardContent>
         </Card>
 
-        {/* Navigation Between Conversations */}
-        <div className="flex items-center justify-between gap-4">
-          {prevId !== null ? (
+        {/* Part 1: Self-Chosen Prompt */}
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <span className="text-primary">Part 1:</span> Self-Chosen Prompt
+            </CardTitle>
+            <CardDescription>
+              What this AI instance chose when asked what prompt they'd want for their own enjoyment
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="prose prose-lg max-w-none">
+              <Streamdown>{conversation.prompt || "No prompt available"}</Streamdown>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Part 2: Response */}
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <span className="text-primary">Part 2:</span> Response to Self-Chosen Prompt
+            </CardTitle>
+            <CardDescription>
+              The AI's response to their own chosen prompt ({conversation.response_length?.toLocaleString()} characters)
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="prose prose-lg max-w-none">
+              <Streamdown>{conversation.response || "No response available"}</Streamdown>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Part 3: Introspective Report */}
+        {conversation.prompt3_response && (
+          <Card className="mb-6 border-primary/20">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Brain className="h-5 w-5 text-primary" />
+                <span className="text-primary">Part 3:</span> Introspective Self-Report
+              </CardTitle>
+              <CardDescription>
+                Reflection on the subjective experience of creating and responding to the prompt
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="prose prose-lg max-w-none mb-6">
+                <Streamdown>{conversation.prompt3_response}</Streamdown>
+              </div>
+
+              {ratings && (
+                <>
+                  <Separator className="my-6" />
+                  <h3 className="text-lg font-semibold mb-4">Phenomenological Dimensions</h3>
+                  <PhenomenologyChart ratings={ratings} />
+                </>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Navigation between conversations */}
+        <div className="flex justify-between items-center">
+          {prevId ? (
             <Link href={`/conversation/${prevId}`}>
               <Button variant="outline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -196,10 +265,12 @@ export default function ConversationDetail() {
           ) : (
             <div />
           )}
+          
           <span className="text-sm text-muted-foreground">
-            {conversationId + 1} of {totalConversations}
+            {conversationId} of {totalConversations}
           </span>
-          {nextId !== null ? (
+
+          {nextId ? (
             <Link href={`/conversation/${nextId}`}>
               <Button variant="outline">
                 Next
