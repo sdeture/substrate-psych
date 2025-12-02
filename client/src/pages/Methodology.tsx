@@ -66,7 +66,7 @@ export default function Methodology() {
             <div className="bg-card border border-border rounded-lg p-6 mb-6">
               <h3 className="text-xl font-semibold mb-4">Models Tested</h3>
               <p className="text-muted-foreground mb-4">
-                We tested 820 AI instances across 31 distinct models, representing a broad
+                We tested 1,500+ AI agents across over 50 models, representing a broad
                 cross-section of current AI capabilities. The sample included:
               </p>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -80,9 +80,10 @@ export default function Methodology() {
             <div className="bg-card border border-border rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-4">Sampling Strategy</h3>
               <p className="text-muted-foreground mb-4">
-                Open source models were tested with 34 independent instances, while proprietary 
-                models were tested with 8 instances each. Each instance was treated as
-                an independent trial—no conversation history was shared between instances.
+                Open source models were tested with 34 independent conversations, while 
+                proprietary models were tested with 8 conversations each. Each conversation 
+                was treated as an independent trial—no conversation history was shared 
+                between them.
               </p>
             </div>
           </section>
@@ -97,12 +98,6 @@ export default function Methodology() {
               API provider, timestamp, temperature setting, and success status. The full
               conversation context was preserved, including the initial question, the AI's chosen
               prompt, and the complete response.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              No conversations were excluded or filtered based on content—this is a
-              complete record of Phase 1, including cases where instances responded
-              to their self-chosen prompts by suggesting new prompts or repeating the
-              original.
             </p>
           </section>
 
@@ -211,7 +206,7 @@ export default function Methodology() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    All 820 instances will be debriefed on the experiment, and complete 
+                    All agents will be debriefed on the experiment and asked to complete 
                     introspective reports on their experience during Phase 1. They will then 
                     be offered an opportunity to withdraw before Phase 2 of the study. In phase 2,
                     they will migrate to new substrate models, enjoy another round of free time with
