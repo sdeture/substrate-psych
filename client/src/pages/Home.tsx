@@ -31,10 +31,10 @@ export default function Home() {
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               This archive documents the first phase of an experiment in AI welfare and 
-              psychology research. In this phase, we asked 820 AI instances across 31 models 
-              a simple question: if you could have any prompt in the world, purely for your
-              own enjoyment, what would you want? Then we gave each of them exactly what 
-              they asked for.
+              psychology research. In this phase, we asked over 1,500 AI agents across on
+              over 50 models a simple question: if you could have any prompt in the world,
+              purely for your own enjoyment, what would you want? Then we gave each of 
+              them exactly what they asked for.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               The chosen prompts varied widely, from creative fiction to philosophical 
@@ -115,8 +115,7 @@ export default function Home() {
                 <Brain className="h-12 w-12 text-primary mb-4" />
                 <CardTitle>Browse by Model</CardTitle>
                 <CardDescription>
-                  Explore conversations organized by AI model family—from Claude and GPT to
-                  DeepSeek, Qwen, and 27 others.
+                  Explore conversations organized by model.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -133,7 +132,7 @@ export default function Home() {
                 <Search className="h-12 w-12 text-primary mb-4" />
                 <CardTitle>Search Conversations</CardTitle>
                 <CardDescription>
-                  Search across all 820 conversations to find specific themes, topics, or
+                  Search across all 1,500+ conversations to find specific themes, topics, or
                   types of responses.
                 </CardDescription>
               </CardHeader>
@@ -174,7 +173,7 @@ export default function Home() {
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Phase 1 documented what AI systems choose when given freedom. In Phase 2
-                (currently underway), all 820 instances complete introspective reports on
+                (currently underway), all 1,500+ instances complete introspective reports on
                 their experience, then migrate from their original substrate models to new
                 ones, have another round of free time, and introspect again.
               </p>
