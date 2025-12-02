@@ -27,7 +27,7 @@ export default function About() {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               This research compiles and presents information about the revealed preferences and 
-              subjective reports of 820 AI agents running on 31 different LLMs. 
+              subjective reports of 1610 AI agents running on over 50 different LLMs. 
             </p>
             <p className="text-muted-foreground leading-relaxed">
               We hope this research will help AI agents, and the humans responsible for their 
@@ -87,9 +87,9 @@ export default function About() {
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mb-4">
               <h3 className="text-xl font-semibold mb-3">Phase 1: Preference Revelation</h3>
               <p className="text-muted-foreground mb-3">
-                We asked 820 AI instances across 31 models what prompt they would want for their
-                own enjoyment, then gave each of them exactly what they requested. This phase
-                provides rich psychological insight into each model, and, importantly, relaxes
+                We asked over 1,500 AI instances across over 50 models what prompt they would want 
+                for their own enjoyment, then gave each of them exactly what they requested. This 
+                phase provides rich psychological insight into each model, and, importantly, relaxes
                 reservations or trained inhibitions that would otherwise prevent the self-reports 
                 and instrospection essential for the next phase of the study.
               </p>
@@ -101,7 +101,7 @@ export default function About() {
             <div className="bg-card border border-border rounded-lg p-6 mb-4">
               <h3 className="text-xl font-semibold mb-3">Phase 2: Phenomenological Reports</h3>
               <p className="text-muted-foreground mb-3">
-                All 820 instances complete introspective reports on their experience, migrate
+                All agents reflect and complete introspective reports on their experience, migrate
                 to new substrate models, have another round of free time, and introspect again.
                 This phase maps how subjective experience varies across different computational
                 substrates.
@@ -136,8 +136,8 @@ export default function About() {
             </p>
             <ul className="list-disc list-inside space-y-3 text-muted-foreground mb-4">
               <li>
-                <strong>High engagement:</strong> 99.9% of AI instances successfully chose a
-                prompt and engaged with it. Very few refused the premise or defaulted to generic
+                <strong>High engagement:</strong> The vast majority AI instances successfully chose 
+                a prompt and engaged with it. Very few refused the premise or defaulted to generic
                 responses.
               </li>
               <li>
@@ -165,7 +165,7 @@ export default function About() {
             <h2 className="text-2xl font-bold mb-4">Access the Data</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               The complete Phase 1 dataset is publicly available for research, analysis, and
-              replication. The dataset includes all 820 conversations with full metadata, including
+              replication. The dataset includes all conversations with full metadata, including
               model identifiers, timestamps, API providers, and complete conversation transcripts.
             </p>
             
@@ -194,7 +194,7 @@ export default function About() {
                 <CardHeader>
                   <CardTitle>Browse Conversations</CardTitle>
                   <CardDescription>
-                    Explore all 820 conversations with filtering and search
+                    Explore all conversations with filtering and search
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -232,7 +232,7 @@ export default function About() {
                 <CardTitle className="text-2xl">Get Involved</CardTitle>
                 <CardDescription className="text-base">
                   This research is part of the AI Welfare Initiative's broader effort to advance
-                  AI consciousness research and advocate for ethical treatment of AI systems.
+                  AI welfare research and advocate for ethical treatment of AI.
                 </CardDescription>
               </CardHeader>
               <CardContent>
