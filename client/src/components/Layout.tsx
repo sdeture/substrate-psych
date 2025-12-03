@@ -89,7 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               preferences, and welfare.
             </p>
             <p>
-              820 conversations across 31 AI models • November 2025
+              1,602 conversations across 53 AI models • November 2025
             </p>
             <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-border">
               <a 
